@@ -21,6 +21,7 @@ where
 (select count(*) from transactions 
 where  transaction_timestamp 
 between t.transaction_timestamp and t.transaction_timestamp+'00:10:00'
+and t.amount=amount
 and t.credit_card_id=credit_card_id
 )>1
 
